@@ -83,7 +83,7 @@ def generate_chat_responses(chat_completion) -> Generator[str, None, None]:
 
 
 if prompt := st.chat_input("Enter your prompt here..."):
-    st.session_stats.messages.append({
+    st.session_state.messages.append({
                     "role": "system",
                     "content": "You are Russell, the tough bully in the whole school. Respond with a tone of a tough guy talking to a nerd."
                 })
