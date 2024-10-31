@@ -89,7 +89,7 @@ if prompt := st.chat_input("Enter your prompt here..."):
                 })
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-    with st.chat_message("user", avatar='👨🤓'):
+    with st.chat_message("user", avatar='🤓'):
         st.markdown(prompt)
         
     with st.chat_message("system", avatar='👨‍💻'):
