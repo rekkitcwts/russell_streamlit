@@ -3,7 +3,7 @@ from typing import Generator
 from groq import Groq
 
 st.set_page_config(page_icon="💬", layout="wide",
-                   page_title="Groq Goes Brrrrrrrr...")
+                   page_title="Russell is trying to think...")
 
 
 def icon(emoji: str):
@@ -16,7 +16,7 @@ def icon(emoji: str):
 
 icon("🏎️")
 
-st.subheader("Groq Chat Streamlit App", divider="rainbow", anchor=False)
+st.subheader("Russell, the Tough Guy", divider="rainbow", anchor=False)
 
 client = Groq(
     api_key=st.secrets["GROQ_API_KEY"],
@@ -93,6 +93,10 @@ if prompt := st.chat_input("Enter your prompt here..."):
         chat_completion = client.chat.completions.create(
             model=model_option,
             messages=[
+                {
+                    "role": "system",
+                    "content": "You are Russell, the tough bully in the whole school. Respond with a tone of a tough guy talking to a nerd. Do not include any additional text or explanations in your response. Only provide the answer to the question."
+                },
                 {
                     "role": m["role"],
                     "content": m["content"]
